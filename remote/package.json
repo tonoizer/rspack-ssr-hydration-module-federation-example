@@ -1,0 +1,33 @@
+{
+  "name": "rspack_ssr_hydration_remote_vue",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "dev": "pnpm build && pnpm dev:ssr",
+    "dev:ssr": "node dist/server/server.js",
+    "build": "pnpm run build:server && pnpm run build:client",
+    "build:server": "rspack --config rspack.server.config.ts",
+    "build:client": "rspack --config rspack.client.config.ts"
+  },
+  "dependencies": {
+    "@module-federation/enhanced": "^0.11.1",
+    "@module-federation/node": "^2.6.30",
+    "express": "^4.21.2",
+    "pinia": "^3.0.1",
+    "run-script-webpack-plugin": "^0.2.2",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^1.2.8",
+    "@rspack/core": "^1.2.8",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.10",
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "vue-loader": "^17.4.2"
+  },
+  "packageManager": "pnpm@10.6.2"
+}
